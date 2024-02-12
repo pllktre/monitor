@@ -1,0 +1,47 @@
+{
+	"scripts": {
+		"test": "node scripts/test.js",
+		"lint": "eslint . --ext .ts",
+		"dev": "npx tsc -p . --watch",
+		"build": "npx run-s build:*",
+		"build:tsc": "npx tsc -p .",
+		"build:extension": "npm run build-extension",
+		"build:script": "node scripts/build.js",
+		"send-build": "npm run build && node scripts/send.js",
+		"cstart": "npx tsc -p . && node dist/main.js",
+		"start": "node scripts/manage.js",
+		"start-once": "node dist/main.js",
+		"upload-all": "node scripts/upload-all.js",
+		"build-extension": "npx run-s build-extension:*",
+		"build-extension:tsc": "npx tsc -p .",
+		"build-extension:previous": "node scripts/webpack-prev",
+		"build-extension:background": "npx webpack --env BG=1",
+		"build-extension:content": "npx webpack --env BG=0",
+		"build-extension:after": "node scripts/webpack-after"
+	},
+	"dependencies": {
+		"needle": "^3.0.0",
+		"nightmare": "^2.8.0",
+		"node-html-parser": "^4.1.2",
+		"npm-run-all": "^4.1.5",
+		"request": "^2.88.2",
+		"socket.io-client": "^4.1.3"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.15.5",
+		"@babel/preset-env": "^7.15.6",
+		"babel-loader": "^8.2.2",
+		"@types/chrome": "0.0.157",
+		"@types/needle": "^2.5.2",
+		"@types/nightmare": "^2.10.5",
+		"@types/website-scraper": "^1.2.6",
+		"@typescript-eslint/eslint-plugin": "^4.31.0",
+		"@typescript-eslint/parser": "^4.31.0",
+		"adm-zip": "^0.5.5",
+		"eslint": "^7.32.0",
+		"typescript": "^4.3.5",
+		"webpack": "^5.53.0",
+		"webpack-cli": "^4.8.0",
+		"website-scraper": "^5.0.0"
+	}
+}

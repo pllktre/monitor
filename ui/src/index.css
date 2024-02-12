@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body * {
+	outline: none;
+}
+
+table {
+}
+
+.timetable_table {
+	border-collapse: collapse;
+}
+
+.timetable_table td {
+	border: none;
+}
+
+.timetable_table tbody tr:nth-child(odd) {
+	@apply bg-gray-800
+}
+
+.week_day_day,
+.week_day_night, 
+.week_day_off, 
+.week_day_on {
+	background-size: 100%;
+}
+
+.week_day_day {
+	background-image: url( "../public/images/day.png" );
+}
+
+.week_day_night {
+	background-image: url( "../public/images/night.png" );
+}
+
+.week_day_off {
+	background-image: url( "../public/images/off.png" );
+}
+
+.week_day_on {
+	background-image: url( "../public/images/on.png" );
+}
+
+.timetable_row {
+	/*@apply bg-blue-200*/
+}
